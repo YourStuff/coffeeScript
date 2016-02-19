@@ -19,6 +19,11 @@ Rails.application.configure do
   # For large-scale production use, consider using a caching reverse proxy like
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
+  MyApp::Application.configure do
+    config.react.variant = :production
+  end
+
+  config.react.jsx_transformer_class = React::JSX::JSXTransformer
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
