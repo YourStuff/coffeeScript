@@ -1,2 +1,0 @@
-# coffeeScript
-Group Project
