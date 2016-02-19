@@ -1,7 +1,4 @@
 
-
-
-
 Coffee Script: Use alongside React or Angular; Build a SPA Rolodex / Contact List.
 
 
