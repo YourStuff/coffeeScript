@@ -19,8 +19,8 @@ Rails.application.configure do
   # For large-scale production use, consider using a caching reverse proxy like
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
-  MyApp::Application.configure do
-    config.react.variant = :production
+  Reacto::Application.configure do
+    config.react.addons = true
   end
 
   config.react.jsx_transformer_class = React::JSX::JSXTransformer
