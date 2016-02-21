@@ -15,12 +15,12 @@
         contact.name.trim().toLowerCase().match(search_string)
 
     div {},
-      div {className: "ui top attached segment"},
-        div {className: "ui icon fluid input"},
+      div {className: "row"},
+        div {className: "col-lg-6"},
           input {
             onChange: @handle_search
             value: @state.search
-            id: 'search'
+            id: 'search' 
             placeholder: 'Search...' }
           i {className: 'search icon'}
       if contacts.length > 0
@@ -30,18 +30,20 @@
             key: contact.id
             handle_delete: @handle_delete
       else
-        div {className: 'ui attached segment'},
+        div {className: "row"},
           "Nothing..."
-      div {className: "ui botoom attached segment"},
+      div {className: "col-lg-6"},
         form { onSubmit: @handle_submit},
-          div {className: "ui action fluid input"},
+          div {className: "input-group"},
             input {
-              type: 'text'
-              name: 'contact[name]'
+              type: 'string'
+              name: 'contact[fname]','contact[lname]'
+              email: 'contact[email]'
+              phone:'contact[phone]'
               placeholder: 'Task...'
               id: 'contact_name' }
             div {
-              className: 'ui teal left labeled button',
+              className: "btn btn-default btn-xs",
               onClick: @handle_submit},
               'Add'
 
@@ -51,7 +53,7 @@
     if name.length > 0
       $.ajax(
          url: "/contacts.json"
-         data: {contact: {name: name, done: false}}
+         data: {contact: {fname: first name, lname: last name, email: email, phone: phone, street: street, city: city, state: state, done: false}}
          type: "POST"
       ).done (contact) =>
         $('#contact_name').val('')
