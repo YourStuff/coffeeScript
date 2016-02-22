@@ -8,7 +8,7 @@
     users = @state.users
     div {},
       
-      div {},
+      div className: 'submit',
         form { onSubmit: @handle_submit},
           input {
             type: 'text'
@@ -29,10 +29,11 @@
 
         div {},
         @handle_getStuff
-        if users.length > 0
-          for user in users
-               div className: 'user',
-               'name: ' + user.name + ' ' + user.email
+          ul
+            if users.length > 0
+              for user in users
+                   li className: 'user',
+                   'Name: ' + user.name  + ' Email: ' + user.email
 
             
   handle_submit: (e) ->
