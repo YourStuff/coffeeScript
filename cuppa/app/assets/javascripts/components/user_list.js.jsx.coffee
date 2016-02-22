@@ -9,7 +9,9 @@
     div {},
       
       div className: 'submit',
-        form { onSubmit: @handle_submit},
+        form { 
+          onSubmit: @handle_submit
+          className: 'form'},
           input {
             type: 'text'
             name: 'userstuff'
@@ -22,18 +24,19 @@
             id: 'user_email' }
           input { 
             type: 'submit'
-            className: "btn btn-primary btn-lg",
+            className: "button",
             onClick: @handle_submit},
-
-
 
         div {},
         @handle_getStuff
-          ul
+          
             if users.length > 0
               for user in users
-                   li className: 'user',
-                   'Name: ' + user.name  + ' Email: ' + user.email
+                  div className: 'user',
+                    div className: 'name',
+                      'Name: ' + user.name
+                    div className: 'email',
+                      'Email: ' + user.email
 
             
   handle_submit: (e) ->
