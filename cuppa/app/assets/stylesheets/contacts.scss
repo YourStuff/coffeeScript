@@ -15,7 +15,25 @@
 .submit {
 
 	border: solid 1px #f06d06;
-  padding: 5px;
+  padding: 10px;
   background-clip: content-box; 
   background-color: #ccc;
+}
+
+
+footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   padding: 10px;
+   color: white;
+   background: #035F6D;
+}
+
+h1 {
+	// background-color: #035F6D;
+	// display:inline-block;
+	color: #035F6D;
 }
