@@ -7,12 +7,6 @@
     search: ''
 
   render: ->
-    contacts = @state.contacts
-    search_string = @state.search.trim().toLowerCase()
-
-    if search_string.length > 0
-      contacts = contacts.filter (contact) ->
-        contact.name.trim().toLowerCase().match(search_string)
 
     div {},
       div {className: "row"},

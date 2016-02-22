@@ -1,7 +1,8 @@
-//= require bootstrap-sprockets
 //= require jquery
+//= require bootstrap-sprockets
 //= require bootstrap
-//= require_tree
+
 //= require react
 //= require react_ujs
 //= require components
+//= require_tree .
