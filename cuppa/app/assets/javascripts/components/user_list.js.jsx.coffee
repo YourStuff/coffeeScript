@@ -7,15 +7,7 @@
   render: ->
     users = @state.users
     div {},
-      div {},
-        @handle_getStuff
-        if users.length > 0
-          for user in users
-            User
-              user: user
-              key: user.id
-              
-
+      
       div {},
         form { onSubmit: @handle_submit},
           input {
@@ -32,6 +24,16 @@
             type: 'submit'
             className: "btn btn-primary btn-lg",
             onClick: @handle_submit},
+
+
+
+        div {},
+        @handle_getStuff
+        if users.length > 0
+          for user in users
+               div className: 'user',
+               'name: ' + user.name + ' ' + user.email
+
             
   handle_submit: (e) ->
     e.preventDefault()
