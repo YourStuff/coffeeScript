@@ -7,25 +7,31 @@
     contact: @props.contact
 
   render: ->
-    div {className: 'ui attached segment'},
-      div {className: "ui ten columns grid" },
-        div {className: "left floated nine wide column" },
-          div {className: 'ui big checkbox input'},
+    div {className: "row"},
+      div {className: "col-lg-6" },
+        div {className: "input-group" },
+          div {className: "input-group-addon"},
             input {
               onChange: @handle_change,
               type: 'checkbox',
               id: @state.contact.id,
-              name: @state.contact.id,
+              fname: @state.contact.fname,
+              lname: @state.contact.lname,
+              email: @state.contact.email,
+              phone: @state.contact.phone,
               checked: (@state.contact.done ? 'checked' : '') }
             label {htmlFor: @state.contact.id},
-              @state.contact.name
-        div {className: "right floated column" },
+              @state.contact.fname,
+              @state.contact.lname,
+              @state.contact.email,
+              @state.contact.phone
+        span {className: "label label-success" },
           i {
-            className: 'red remove circle large link icon',
+            className: "label label-danger",
             onClick: @delete_me }
 
   clean_object: (o) ->
-    for key in ['id', 'created_at', 'updated_at']
+    for key in ['id', 'fname', 'lname', 'email', 'phone']
       delete o[key]
     return o
 
