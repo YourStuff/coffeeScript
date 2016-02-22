@@ -8,6 +8,15 @@
     users = @state.users
     div {},
       div {},
+        @handle_getStuff
+        if users.length > 0
+          for user in users
+            User
+              user: user
+              key: user.id
+              
+
+      div {},
         form { onSubmit: @handle_submit},
           input {
             type: 'text'
@@ -35,9 +44,10 @@
         type: "POST"
       ).done (user) =>
         $('#user_name').val('')
+        $('#user_email').val('')
         @setState users: (@state.users.concat [user])
 
-  handle_delete: ->
+  handle_getStuff: ->
     $.ajax(
       url: "/users.json"
       type: "GET"
